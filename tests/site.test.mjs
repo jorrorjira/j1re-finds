@@ -4,6 +4,30 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
+
+test('Swiss tokens keep all text pairs at AAA contrast in both themes', () => {
+  const css = readFileSync(new URL('styles.css', root), 'utf8');
+  const luminance = hex => {
+    const rgb = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+      .map(v => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
+    return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
+  };
+  for (const selector of [':root', '[data-theme="dark"]']) {
+    const start = css.indexOf(selector);
+    assert.ok(start >= 0, selector);
+    const block = css.slice(start, css.indexOf('}', start));
+    const tokens = Object.fromEntries([...block.matchAll(/--([a-z-]+):\s*(#[a-fA-F0-9]{6})/g)].map(m => [m[1], m[2]]));
+    for (const [fg, bg] of [['ink', 'canvas'], ['ink', 'surface'], ['muted', 'canvas'], ['muted', 'surface'], ['accent-color', 'canvas'], ['accent-color', 'surface'], ['on-accent', 'accent-color']]) {
+      assert.ok(tokens[fg] && tokens[bg], `${selector}: ${fg}/${bg} tokens`);
+      const [a, b] = [luminance(tokens[fg]), luminance(tokens[bg])].sort((a, b) => b - a);
+      const ratio = (a + .05) / (b + .05);
+      assert.ok(ratio >= 7, `${selector}: ${fg}/${bg} = ${ratio.toFixed(2)} (AAA needs 7)`);
+    }
+  }
+  assert.match(css, /grid-template-columns:\s*repeat\(12,/);
+  assert.doesNotMatch(css, /(?:linear|radial)-gradient\(/);
+});
+
 const data = JSON.parse(readFileSync(new URL('products.json', root), 'utf8'));
 test('four supplied affiliate URLs are preserved in order with real catalog entries', () => {
   assert.deepEqual(data.products.map(p => p.url), [
@@ -28,7 +52,19 @@ test('all HTML assets are relative and exist, with a labeled mobile share button
   for (const match of html.matchAll(/(?:src|href)="(\.\/[^"#]*)"/g)) {
     assert.ok(existsSync(fileURLToPath(new URL(match[1],root))), match[1]);
   }
-  assert.match(html, /id="share"[^>]*aria-label="แชร์หน้านี้"/);
+  assert.match(html, /id="share"[^>]*aria-label="Share this collection"/);
   assert.match(html, /rel="icon"/);
+  assert.match(html, /<html lang="en"/);
+  assert.doesNotMatch(html, /[\u0E00-\u0E7F]/);
+  for (const id of ['features', 'finds', 'testimonials', 'pricing', 'final-cta', 'privacy', 'terms', 'contact']) {
+    assert.ok(html.includes(`id="${id}"`), id);
+  }
+  for (const name of ['feature-card', 'testimonial-card', 'pricing-card']) {
+    assert.equal((html.match(new RegExp(`class="${name}(?: |")`, 'g')) || []).length, 3, name);
+  }
+  assert.match(html, /Illustrative examples[\s\S]*not customer reviews/);
+  assert.match(html, /not subscription plans/);
+  assert.match(html, /property="og:image"/);
+  for (const product of data.products) assert.doesNotMatch(product.description, /[\u0E00-\u0E7F]/);
   assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i);
 });

@@ -1,6 +1,15 @@
 # Verification
 
-## Public deployment
+## Swiss redesign checks
+
+- `node --test tests/*.test.mjs`: 5 tests pass, including all original URLs in order, English page content and AAA text-token contrast (at least 7:1) in light and dark themes.
+- `node --check app.mjs` and `git diff --check`: pass.
+- `tests/landing.browser.mjs`: 41 checks passed in the real local browser. Covers all four brand filters and footer filters, original URLs and images, search, empty/reset, light/dark, dialogs and restored focus, clipboard-denied fallback, mobile menu, network failure/retry, and overflow/clipping at 1440, 1024, 768, 390 and 320 CSS pixels.
+- Result: `D:/Projects/j1re-qa/swiss-browser.json`. The strengthened footer regression test also starts from a different category and a nonmatching query; the final rerun used native keyboard focus/Enter activation. Tests cover UI text; original product-listing images are retained without editing their artwork.
+- Visual review: native-window captures of actual 1440px desktop and 390px mobile iframe viewports, scaled for inspection. Hero, collection, testimonial layout, pricing and footer were inspected. Evidence: `D:/Projects/j1re-qa/swiss-*-native.png`. Direct browser full-page screenshot capture timed out; these are cropped native-window captures, not full-page browser screenshots.
+- AAA verification here is for text contrast, not a certification of complete WCAG AAA conformance. No physical mobile devices were tested.
+
+## Original release evidence (before Swiss redesign)
 
 - Production: https://j1re-finds.pages.dev/ on Cloudflare Pages, connected to `jorrorjira/j1re-finds`, branch `main`, automatic deployments enabled.
 - The deployment command was exercised locally: only runtime files and `assets/` are copied to `dist/`; tests and docs are excluded.

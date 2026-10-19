@@ -1,68 +1,134 @@
 <!doctype html>
-<html lang="th">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f7f3">
-  <meta name="description" content="j1re — รวมพิกัดเมาส์เกมมิ่ง ATK, Logitech, Ninjutso และ RAWM ค้นหาลิงก์สินค้าได้ในที่เดียว">
-  <meta property="og:title" content="j1re — little things, good finds.">
-  <meta property="og:description" content="รวมพิกัดของน่าใช้ไว้ให้แล้ว ในที่เดียว">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="description" content="A considered collection of gaming mice. Explore ATK, Logitech, Ninjutso and RAWM, then follow the original product links to Shopee.">
+  <meta property="og:title" content="j1re — Less noise. Better finds.">
+  <meta property="og:description" content="Four gaming mice. One considered edit. Find your next setup essential with j1re.">
   <meta property="og:type" content="website">
-  <title>j1re — รวมพิกัดของน่าใช้</title>
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://j1re-finds.pages.dev/">
+  <meta property="og:image" content="https://j1re-finds.pages.dev/assets/og-swiss.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="j1re. Less noise. Better finds. An independent gaming mouse edit.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://j1re-finds.pages.dev/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <title>j1re — Less noise. Better finds.</title>
+  <style>
+    /* A flat-colour, CSS-only exploded object. No textures, canvas or motion loop. */
+    .object-stage{position:relative;display:grid;place-items:center;min-height:438px;background:var(--surface);overflow:hidden;perspective:1000px}
+    .object{width:220px;height:220px;position:relative;transform-style:preserve-3d;transform:rotateX(57deg) rotateZ(-36deg);pointer-events:none}
+    .object-plane{position:absolute;inset:0;border:2px solid var(--ink);background:var(--canvas);transform:translateZ(var(--z))}
+    .object-plane:nth-child(1){--z:-75px;background:var(--ink)}
+    .object-plane:nth-child(2){--z:-25px}
+    .object-plane:nth-child(3){--z:25px}
+    .object-plane:nth-child(4){--z:75px;background:var(--accent-color);border-color:var(--accent-color)}
+    .object-plane:last-child::after{content:'';position:absolute;inset:34%;border:2px solid var(--on-accent)}
+    .object-index{position:absolute;top:24px;left:24px;font-size:12px;letter-spacing:.08em}
+    .object-corner{position:absolute;top:24px;right:24px;width:24px;height:24px;border-top:1px solid var(--ink);border-right:1px solid var(--ink)}
+    .object-caption{position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;gap:16px;font-size:12px;line-height:1.5}
+    @media(max-width:760px){.object-stage{min-height:350px}.object{width:190px;height:190px}}
+  </style>
   <script type="module" src="./app.mjs"></script>
 </head>
-<body>
-  <a class="skip-link" href="#finds">ข้ามไปดูพิกัดสินค้า</a>
-  <div class="page-wrap">
+<body id="top">
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m4 2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(1 0)"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 13a8 8 0 0 1-9-9 8 8 0 1 0 9 9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#finds">Skip to the collection</a>
+  <div class="shell">
     <header class="site-header">
-      <a class="brand" href="./" aria-label="j1re หน้าแรก">j1re<span class="brand-dot">.</span></a>
-      <span class="header-note">a little corner of good finds</span>
-      <nav aria-label="เมนูหลัก">
-        <a class="nav-current" href="#finds">รวมพิกัด</a>
-        <a href="#about">เกี่ยวกับ</a>
-        <button class="share-button" id="share" type="button" aria-label="แชร์หน้านี้"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg><span>แชร์หน้านี้</span></button>
+      <a class="brand" href="#top" aria-label="j1re home">j1re<span>.</span></a>
+      <span class="brand-caption">Independent finds.<br>Considered choices.</span>
+      <button class="icon-button menu-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="#finds">The collection</a><a href="#features">Our approach</a><a href="#pricing">Pricing</a>
       </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></button>
+        <a class="button button-small header-cta" href="#finds">Explore the edit <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
     </header>
     <main>
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero grid-12" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="small-spark" aria-hidden="true">✳</span> THE J1RE FINDS</div>
-          <h1 id="hero-title">ของน่าใช้<br>ที่อยาก<span class="marked">บอกต่อ<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12Q135 1 293 9M33 18Q175 9 270 15"/></svg></span><span class="title-dot">.</span></h1>
-          <p class="hero-description">เจอของที่ชอบแล้วหาพิกัดไม่เจอ?<br>รวมไว้ให้ตรงนี้แล้ว เลือกดูได้เลย</p>
-          <a class="primary-button" href="#finds">ดูพิกัดทั้งหมด <span aria-hidden="true">↘</span></a>
-          <span class="hero-footnote">little things, good finds.</span>
+          <p class="eyebrow"><span class="square" aria-hidden="true"></span> The gaming mouse edit / 01</p>
+          <h1 id="hero-title">Less noise.<br><span class="accent">Better finds.</span></h1>
+          <p class="hero-description">A small collection for a setup that feels like you. Discover gaming mice worth a closer look, without the endless open tabs.</p>
+          <div class="button-row"><a class="button" href="#finds">Find your next mouse <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="button button-outline" href="#features">How it works</a></div>
+          <p class="microcopy">No sign-up. No membership. Just the links.</p>
         </div>
-        <div class="hero-art">
-          <div class="art-caption"><span>THE EVERYDAY EDIT</span><span>by j1re ↗</span></div>
-          <img src="./assets/hero.svg" width="640" height="500" alt="ภาพประกอบตัวอย่าง: หูฟัง โคมไฟ และแก้วกาแฟ โทนครีมและส้ม" fetchpriority="high">
-          <span class="art-sticker">find your<br><em>next favorite.</em></span>
-          <span class="art-label">ภาพประกอบเว็บไซต์ · สินค้าจริงอยู่ด้านล่าง</span>
+        <figure class="hero-visual object-stage" aria-label="An abstract stack of four square planes, representing a focused collection">
+          <span class="object-index">J1 / OBJECT STUDY</span><span class="object-corner" aria-hidden="true"></span>
+          <div class="object" aria-hidden="true"><i class="object-plane"></i><i class="object-plane"></i><i class="object-plane"></i><i class="object-plane"></i></div>
+          <figcaption class="object-caption"><span>Four picks.<br>One place.</span><span>Form follows<br>function.</span></figcaption>
+        </figure>
+      </section>
+      <div class="brand-strip" aria-label="Brands in this collection"><span class="label">IN THIS EDIT</span><span>ATK</span><span>Logitech</span><span>Ninjutso</span><span>RAWM</span><span class="strip-note">Different shapes. Your choice.</span></div>
+      <section id="features" class="section" aria-labelledby="features-title">
+        <div class="section-heading grid-12"><p class="section-index">01 / THE APPROACH</p><h2 id="features-title">A little less scrolling.<br>A little more clarity.</h2><p class="section-description">The essentials, in one place.<br>Nothing standing between you and your next find.</p></div>
+        <div class="three-grid">
+          <article class="feature-card"><div class="card-top"><svg class="icon feature-icon" aria-hidden="true"><use href="#i-grid"/></svg><span class="label">01</span></div><h3>A focused collection.</h3><p>Four gaming mice, clearly presented. Browse the edit or narrow it down by brand and model.</p></article>
+          <article class="feature-card"><div class="card-top"><svg class="icon feature-icon" aria-hidden="true"><use href="#i-link"/></svg><span class="label">02</span></div><h3>Straight to the source.</h3><p>Every product leads to its Shopee listing. Check the latest price, options and seller details there.</p></article>
+          <article class="feature-card"><div class="card-top"><svg class="icon feature-icon" aria-hidden="true"><use href="#i-check"/></svg><span class="label">03</span></div><h3>Nothing to sign up for.</h3><p>No account or subscription needed. Pick a direction, follow a link and make your own call.</p></article>
         </div>
       </section>
-      <div class="demo-notice" id="demo-notice" hidden><span class="notice-dot" aria-hidden="true"></span><strong>กำลังจัดตะกร้า</strong><span>ตอนนี้เป็นรายการตัวอย่าง ยังไม่มีลิงก์ซื้อสินค้า</span><span class="notice-tag">PREVIEW</span></div>
-      <section id="finds" class="finds" aria-labelledby="finds-title">
-        <div class="section-top">
-          <div><span class="eyebrow section-eyebrow">THE LINK COLLECTION</span><h2 id="finds-title">เลือกดูพิกัด<span class="accent">.</span></h2></div>
-          <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span class="sr-only">ค้นหาชื่อหรือเลขสินค้า</span><input id="search" type="search" placeholder="ค้นหาชื่อหรือเลขสินค้า..." autocomplete="off" maxlength="120"><kbd aria-hidden="true">/</kbd></label>
+      <section id="finds" class="section collection" aria-labelledby="finds-title">
+        <div class="section-heading grid-12"><p class="section-index">02 / THE COLLECTION</p><h2 id="finds-title">Meet your next<br>desk companion.</h2><p class="section-description">A selection, not a ranking.<br>Choose what works for your hand, your setup and your play.</p></div>
+        <div class="collection-controls"><div id="categories" class="category-list" role="group" aria-label="Filter by brand"></div><label class="search-field"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search by name or product number</span><input id="search" type="search" placeholder="Search the collection" maxlength="120" autocomplete="off"><kbd aria-hidden="true">/</kbd></label></div>
+        <div class="collection-meta"><p id="result-count" role="status" aria-live="polite"></p><span>Current prices on Shopee <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></span></div>
+        <div id="demo-notice" class="notice" hidden>Sample entries are awaiting verified product links.</div>
+        <div id="product-grid" class="product-grid" aria-busy="true"><p class="load-message">Loading the collection...</p></div>
+        <div id="empty-state" class="empty-state" hidden><h3>No finds this time.</h3><p>Try another name, number or brand.</p><button class="button button-outline" id="reset" type="button">Show all finds <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+        <div id="error-state" class="empty-state" role="alert" hidden><h3>The collection could not load.</h3><p>Please check your connection and try again.</p><button class="button" id="retry" type="button">Try again</button></div>
+        <noscript><p class="notice">Enable JavaScript to load and search the collection.</p></noscript>
+        <aside class="affiliate-note"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg><p><strong>A note on our links.</strong> We may earn a commission when you buy through them, at no extra cost for using the link. Prices, availability and purchase terms are set by the retailer. j1re is not an official Shopee website.</p></aside>
+      </section>
+      <section id="testimonials" class="section perspectives" aria-labelledby="testimonials-title">
+        <div class="section-heading grid-12"><p class="section-index">03 / PERSPECTIVES</p><h2 id="testimonials-title">Different people.<br>One simpler starting point.</h2><p class="section-description">Illustrative examples for this design,<br><strong>not customer reviews.</strong></p></div>
+        <div class="three-grid">
+          <figure class="testimonial-card"><span class="label">SAMPLE TESTIMONIAL / 01</span><blockquote>“I would rather start with four options than forty open tabs.”</blockquote><figcaption><span class="persona-mark" aria-hidden="true">01</span><span>The focused shopper<small>Illustrative perspective</small></span></figcaption></figure>
+          <figure class="testimonial-card"><span class="label">SAMPLE TESTIMONIAL / 02</span><blockquote>“Show me the model. Let me check the details at the source.”</blockquote><figcaption><span class="persona-mark" aria-hidden="true">02</span><span>The detail person<small>Illustrative perspective</small></span></figcaption></figure>
+          <figure class="testimonial-card"><span class="label">SAMPLE TESTIMONIAL / 03</span><blockquote>“A useful link is one I can find again, and share with a friend.”</blockquote><figcaption><span class="persona-mark" aria-hidden="true">03</span><span>The thoughtful friend<small>Illustrative perspective</small></span></figcaption></figure>
         </div>
-        <div class="collection-toolbar"><div id="categories" class="category-list" role="group" aria-label="แบรนด์สินค้า"></div><p id="result-count" class="result-count" role="status" aria-live="polite"></p></div>
-        <div id="product-grid" class="product-grid" aria-busy="true"><p class="load-message">กำลังโหลดรายการ...</p></div>
-        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>ยังไม่เจอพิกัดที่หา</h3><p>ลองใช้คำอื่น หรือกลับไปดูสินค้าทั้งหมด</p><button type="button" id="reset" class="text-button">ดูทั้งหมด <span aria-hidden="true">↗</span></button></div>
-        <div class="error-state" id="error-state" hidden role="alert"><h3>โหลดรายการไม่สำเร็จ</h3><p>ลองโหลดหน้าใหม่อีกครั้งนะครับ</p><button class="text-button" id="retry" type="button">ลองอีกครั้ง ↻</button></div>
-        <noscript><p class="demo-notice">กรุณาเปิด JavaScript เพื่อค้นหาและแสดงพิกัดสินค้า</p></noscript>
       </section>
-      <section id="about" class="about" aria-labelledby="about-title">
-        <div class="about-symbol" aria-hidden="true">j<span>1</span></div>
-        <div class="about-copy"><h2 id="about-title">รวมพิกัดไว้ ไม่ต้องเลื่อนหา</h2><p>พื้นที่เล็ก ๆ ของ j1re สำหรับรวมลิงก์ของที่อยากแบ่งปัน<br>เจอชิ้นที่สนใจ กดดูรายละเอียดต่อบน Shopee ได้เลย</p></div>
-        <a class="back-top" href="#" aria-label="กลับด้านบน">↑</a>
+      <section id="pricing" class="section" aria-labelledby="pricing-title">
+        <div class="section-heading grid-12"><p class="section-index">04 / SIMPLE PRICING</p><h2 id="pricing-title">Good finds.<br>No membership.</h2><p class="section-description">Three ways to use the collection,<br>not subscription plans. Browsing j1re is free.</p></div>
+        <div class="three-grid pricing-grid">
+          <article class="pricing-card"><span class="label">THE OPEN DOOR</span><h3>Explore</h3><p class="price">$0<span>to browse</span></p><p>Start with the whole picture.</p><ul class="check-list"><li>See the complete collection</li><li>View product names and images</li><li>No account required</li></ul><a class="button button-outline" href="#finds">Browse all finds <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+          <article class="pricing-card featured"><div class="plan-banner">A GOOD PLACE TO START</div><span class="label">THE FOCUSED EDIT</span><h3>Find your fit</h3><p class="price">$0<span>to explore</span></p><p>A little direction goes a long way.</p><ul class="check-list"><li>Filter the collection by brand</li><li>Search by model or number</li><li>Share the collection with a friend</li></ul><a class="button" href="#finds">Find your next mouse <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+          <article class="pricing-card"><span class="label">THE NEXT STEP</span><h3>Shop at the source</h3><p class="price price-words">Store price<span>paid to the retailer</span></p><p>Your purchase happens on Shopee.</p><ul class="check-list"><li>See current prices and options</li><li>Check shipping and availability</li><li>Review the seller's terms</li></ul><a class="button button-outline" href="#finds">View product links <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></article>
+        </div>
       </section>
-      <aside class="disclosure" aria-label="เกี่ยวกับลิงก์ Affiliate"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><p><strong>เกี่ยวกับลิงก์ Affiliate</strong> j1re อาจได้รับค่าคอมมิชชันจากการซื้อผ่านลิงก์ โดยไม่มีค่าใช้จ่ายเพิ่มจากลิงก์นี้ ราคา สต็อก และเงื่อนไขเป็นไปตามหน้าร้านบน Shopee เว็บไซต์นี้ไม่ใช่เว็บไซต์ทางการของ Shopee</p></aside>
+      <section id="final-cta" class="final-cta grid-12" aria-labelledby="cta-title"><div><p class="eyebrow">A SMALL EDIT. YOUR NEXT FIND.</p><h2 id="cta-title">Make room for<br>something better.</h2></div><div class="cta-actions"><a class="button" href="#finds">Explore the collection <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="text-button" id="share" type="button" aria-label="Share this collection"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg> Share with a friend</button></div></section>
     </main>
-    <footer><a class="brand footer-brand" href="./">j1re<span class="brand-dot">.</span></a><span>a little corner, a good find.</span><span>Made to be shared <span class="accent" aria-hidden="true">↗</span></span></footer>
+    <footer class="site-footer">
+      <div class="footer-top grid-12"><div class="footer-brand"><a class="brand" href="#top" aria-label="j1re home">j1re<span>.</span></a><p>Less noise. Better finds.<br>An independent corner of the internet.</p><div class="social-links" aria-label="Social links">
+        <a href="https://github.com/jorrorjira/j1re-finds" target="_blank" rel="noopener noreferrer" aria-label="View j1re on GitHub"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-3.5c0-1 .1-1.5-.5-2 3-.3 6-1.5 6-6A5 5 0 0 0 19 7c.2-1 .2-2.5-.3-3.5-1 0-3 1-3.7 1.5a13 13 0 0 0-6 0C8.3 4.5 6.3 3.5 5.3 3.5 4.8 4.5 4.8 6 5 7a5 5 0 0 0-1.5 3.5c0 4.5 3 5.7 6 6-.6.5-.5 1-.5 2V22"/></svg></a>
+        <a href="https://twitter.com/intent/tweet?text=Less%20noise.%20Better%20finds.&amp;url=https%3A%2F%2Fj1re-finds.pages.dev%2F" target="_blank" rel="noopener noreferrer" aria-label="Share j1re on X"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 16 16M20 4 4 20M4 4h5l11 16h-5Z"/></svg></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fj1re-finds.pages.dev%2F" target="_blank" rel="noopener noreferrer" aria-label="Share j1re on Facebook"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-9h3l1-4h-4V6c0-1 1-2 2-2h2V1h-3c-4 0-6 2-6 5v2H6v4h3v9"/></svg></a>
+      </div></div><nav class="footer-links" aria-label="Explore"><h3>Explore</h3><a href="#finds">All finds</a><a href="#features">Our approach</a><a href="#testimonials">Perspectives</a><a href="#pricing">Pricing</a></nav><nav class="footer-links" aria-label="Browse brands"><h3>The brands</h3><a href="#finds" data-filter-link="atk">ATK mice</a><a href="#finds" data-filter-link="logitech">Logitech mice</a><a href="#finds" data-filter-link="ninjutso">Ninjutso mice</a><a href="#finds" data-filter-link="rawm">RAWM mice</a></nav><nav class="footer-links" aria-label="Information"><h3>Good to know</h3><button type="button" data-dialog="privacy">Privacy policy</button><button type="button" data-dialog="terms">Terms of use</button><button type="button" data-dialog="contact">Contact</button><a href="#finds">Gaming mouse collection</a></nav></div>
+      <div class="footer-bottom"><span>Copyright 2026 j1re. All rights reserved.</span><span>Independent selection. Affiliate links.</span><a href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </footer>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-  <dialog id="share-dialog" aria-labelledby="share-title"><form method="dialog"><button class="dialog-close" aria-label="ปิด" value="close">×</button><h2 id="share-title">แชร์พิกัดให้เพื่อน</h2><p>คัดลอกลิงก์ด้านล่างเพื่อแชร์หน้านี้</p><label for="share-url">ลิงก์หน้านี้</label><input id="share-url" readonly><button class="primary-button" value="close">เรียบร้อย</button></form></dialog>
+  <dialog id="share-dialog" aria-labelledby="share-title"><form method="dialog"><button class="icon-button dialog-close" aria-label="Close share dialog"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><span class="label">PASS IT ON</span><h2 id="share-title">A good find is<br>better shared.</h2><p>Copy this link to share the collection.</p><label for="share-url">Collection URL</label><input id="share-url" readonly><button class="button">Done <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></button></form></dialog>
+  <dialog id="privacy" aria-labelledby="privacy-title"><form method="dialog"><button class="icon-button dialog-close" aria-label="Close privacy policy"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><span class="label">THE DETAILS</span><h2 id="privacy-title">Privacy policy</h2><p>This site does not ask for an account or payment information. It does not use its own analytics, advertising cookies or persistent theme storage.</p><p>Our hosting provider may process technical request data to serve and secure this site. Shopee and other external sites have their own privacy policies. Affiliate links may let the retailer attribute a purchase to j1re.</p><p>Contact us through the public GitHub project if you have a question. Do not include private or payment information in a public issue.</p><button class="button">Close</button></form></dialog>
+  <dialog id="terms" aria-labelledby="terms-title"><form method="dialog"><button class="icon-button dialog-close" aria-label="Close terms of use"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><span class="label">THE DETAILS</span><h2 id="terms-title">Terms of use</h2><p>j1re is an independent affiliate collection, not a store or an official Shopee website. Product images and brand names belong to their respective owners.</p><p>Always confirm the model, current price, stock, delivery date, warranty and seller terms on Shopee. Purchases and support are handled by the retailer, not by j1re.</p><p>Browsing is free. We may receive a commission from qualifying purchases through our links. The illustrative testimonials in this design are not verified customer feedback or endorsements.</p><button class="button">Close</button></form></dialog>
+  <dialog id="contact" aria-labelledby="contact-title"><form method="dialog"><button class="icon-button dialog-close" aria-label="Close contact details"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><span class="label">GET IN TOUCH</span><h2 id="contact-title">Something to<br>tell us?</h2><p>Report a broken link or suggest an improvement through the j1re GitHub project. Your message will be public, so leave out personal information.</p><a class="button" href="https://github.com/jorrorjira/j1re-finds/issues/new" target="_blank" rel="noopener noreferrer">Open a GitHub issue <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a><p>For an order, delivery or return, contact the seller through Shopee.</p></form></dialog>
 </body>
 </html>
