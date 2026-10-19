@@ -30,5 +30,5 @@ test('all HTML assets are relative and exist, with a labeled mobile share button
   }
   assert.match(html, /id="share"[^>]*aria-label="แชร์หน้านี้"/);
   assert.match(html, /rel="icon"/);
-  assert.match(html, /noindex, nofollow/);
+  assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i);
 });
