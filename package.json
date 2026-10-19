@@ -1,0 +1,11 @@
+{
+  "name": "j1re-finds",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "j1re affiliate link collection \u2014 static preview",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "start": "python -m http.server 4173 --bind 127.0.0.1"
+  }
+}

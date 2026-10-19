@@ -1,0 +1,94 @@
+{
+  "categories": [
+    {
+      "id": "atk",
+      "name": "ATK",
+      "english": "ATK / GAMING MOUSE"
+    },
+    {
+      "id": "logitech",
+      "name": "Logitech",
+      "english": "LOGITECH / GAMING MOUSE"
+    },
+    {
+      "id": "ninjutso",
+      "name": "Ninjutso",
+      "english": "NINJUTSO / GAMING MOUSE"
+    },
+    {
+      "id": "rawm",
+      "name": "RAWM",
+      "english": "RAWM / GAMING MOUSE"
+    }
+  ],
+  "products": [
+    {
+      "id": "001",
+      "name": "ATK Phantom ULTIMATE",
+      "category": "atk",
+      "description": "เมาส์เกมมิ่ง • เลือกรุ่นและสีที่หน้าร้าน",
+      "image": "./assets/atk-phantom.webp",
+      "url": "https://s.shopee.co.th/7AeS06RQfd",
+      "demo": false,
+      "tags": [
+        "เมาส์",
+        "เกมมิ่ง",
+        "mouse",
+        "gaming",
+        "ATK"
+      ],
+      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mthgxlrr7aiq12@resize_w450_nl.webp"
+    },
+    {
+      "id": "002",
+      "name": "Logitech G PRO X3 SUPERSTRIKE",
+      "category": "logitech",
+      "description": "มีหลายตัวเลือก • ตรวจรุ่นและสีก่อนสั่งซื้อ",
+      "image": "./assets/logitech-superstrike.webp",
+      "url": "https://s.shopee.co.th/4LKGcvhFdP",
+      "demo": false,
+      "tags": [
+        "เมาส์",
+        "เกมมิ่ง",
+        "mouse",
+        "gaming",
+        "Logitech"
+      ],
+      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztf-mthj1xmlu32ebc_tn"
+    },
+    {
+      "id": "003",
+      "name": "Ninjutso Sora V3",
+      "category": "ninjutso",
+      "description": "เมาส์เกมมิ่ง • ดูเงื่อนไขประกันจากร้านค้า",
+      "image": "./assets/ninjutso-sora-v3.webp",
+      "url": "https://s.shopee.co.th/4qGXDsHAME",
+      "demo": false,
+      "tags": [
+        "เมาส์",
+        "เกมมิ่ง",
+        "mouse",
+        "gaming",
+        "Ninjutso"
+      ],
+      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztj-mr4gw2pmz6ys4e_tn"
+    },
+    {
+      "id": "004",
+      "name": "RAWM LEVIATHAN V4 GT",
+      "category": "rawm",
+      "description": "ร้านระบุ COMING • เช็กวันจัดส่งก่อนสั่งซื้อ",
+      "image": "./assets/rawm-leviathan-v4.webp",
+      "url": "https://s.shopee.co.th/W7Y3vuHxE",
+      "demo": false,
+      "tags": [
+        "เมาส์",
+        "เกมมิ่ง",
+        "mouse",
+        "gaming",
+        "RAWM"
+      ],
+      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mtqau0iken0h0c@resize_w450_nl.webp"
+    }
+  ]
+}
