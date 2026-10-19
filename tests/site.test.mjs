@@ -5,14 +5,14 @@ import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
 
-test('Swiss tokens keep all text pairs at AAA contrast in both themes', () => {
+test('New palette keeps text at AAA contrast on the original layout', () => {
   const css = readFileSync(new URL('styles.css', root), 'utf8');
   const luminance = hex => {
     const rgb = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
       .map(v => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
     return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
   };
-  for (const selector of [':root', '[data-theme="dark"]']) {
+  for (const selector of [':root']) {
     const start = css.indexOf(selector);
     assert.ok(start >= 0, selector);
     const block = css.slice(start, css.indexOf('}', start));
@@ -24,7 +24,9 @@ test('Swiss tokens keep all text pairs at AAA contrast in both themes', () => {
       assert.ok(ratio >= 7, `${selector}: ${fg}/${bg} = ${ratio.toFixed(2)} (AAA needs 7)`);
     }
   }
-  assert.match(css, /grid-template-columns:\s*repeat\(12,/);
+  assert.match(css, /grid-template-columns:1fr 1fr/);
+  assert.match(css, /grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);
+  assert.match(css, /grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.doesNotMatch(css, /(?:linear|radial)-gradient\(/);
 });
 
@@ -52,19 +54,15 @@ test('all HTML assets are relative and exist, with a labeled mobile share button
   for (const match of html.matchAll(/(?:src|href)="(\.\/[^"#]*)"/g)) {
     assert.ok(existsSync(fileURLToPath(new URL(match[1],root))), match[1]);
   }
-  assert.match(html, /id="share"[^>]*aria-label="Share this collection"/);
+  assert.match(html, /id="share"[^>]*aria-label="แชร์หน้านี้"/);
   assert.match(html, /rel="icon"/);
-  assert.match(html, /<html lang="en"/);
-  assert.doesNotMatch(html, /[\u0E00-\u0E7F]/);
-  for (const id of ['features', 'finds', 'testimonials', 'pricing', 'final-cta', 'privacy', 'terms', 'contact']) {
-    assert.ok(html.includes(`id="${id}"`), id);
-  }
-  for (const name of ['feature-card', 'testimonial-card', 'pricing-card']) {
-    assert.equal((html.match(new RegExp(`class="${name}(?: |")`, 'g')) || []).length, 3, name);
-  }
-  assert.match(html, /Illustrative examples[\s\S]*not customer reviews/);
-  assert.match(html, /not subscription plans/);
+  assert.match(html, /<html lang="th"/);
+  assert.deepEqual([...html.matchAll(/<section\b[^>]*class="([^"]+)"/g)].map(m => m[1]), ['hero', 'finds', 'about']);
+  assert.match(html, /class="page-wrap"/);
+  assert.match(html, /ของน่าใช้<br>ที่อยาก/);
+  assert.match(html, /src="\.\/assets\/hero\.svg"/);
+  assert.doesNotMatch(html, /id="(?:features|testimonials|pricing|final-cta|theme-toggle|nav-toggle)"/);
   assert.match(html, /property="og:image"/);
-  for (const product of data.products) assert.doesNotMatch(product.description, /[\u0E00-\u0E7F]/);
+  for (const product of data.products) assert.match(product.description, /[\u0E00-\u0E7F]/);
   assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i);
 });

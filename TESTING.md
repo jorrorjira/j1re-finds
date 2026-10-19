@@ -1,6 +1,15 @@
 # Verification
 
-## Swiss redesign checks
+## Restored catalog layout (current)
+
+- Original Thai page body and section order from `0469f1f` restored; only the illustration's colour description changed. No testimonial, pricing or extra marketing sections.
+- Compared 259 layout declarations with the original CSS: only product-button inner horizontal padding differs. The existing hero SVG shapes/coordinates are unchanged; its colour values were updated. All four original product image bytes and affiliate URLs are unchanged.
+- `node --test tests/*.test.mjs`: 5 passing tests. Restored-layout assertions failed before implementation. Text-token contrast is at least 7:1; this is not a full WCAG AAA certification.
+- `tests/landing.browser.mjs`: 32 local-browser checks passed, with zero runtime exceptions. Original section/column layout, four brands/URLs/images, search, empty/reset, share fallback, network failure/retry and overflow at 1440/1024/768/390/320px are covered. A desktop heading-wrap regression followed red/green; 16px Arial keeps the original single-line product titles.
+- Native pointer clicks passed for the hero CTA, Logitech filter and reset to all products. Exact 700/701px and 1000/1001px breakpoints passed overflow/column checks. Evidence: `D:/Projects/j1re-qa/restore-browser.json`, `restore-pointer-breakpoints.json`, `restore-layout-evidence.json`.
+- Actual 1440px desktop and 390px mobile pages were visually inspected through scaled iframe viewports and native-window captures. Mobile capture shows consecutive top/bottom portions. Evidence: `restore-desktop-native.png`, `restore-mobile-native.png` in the same QA directory. Direct CDP full-page screenshot capture timed out; native captures are not browser full-page screenshots. No physical mobile devices tested.
+
+## Previous Swiss redesign (superseded)
 
 - `node --test tests/*.test.mjs`: 5 tests pass, including all original URLs in order, English page content and AAA text-token contrast (at least 7:1) in light and dark themes.
 - `node --check app.mjs` and `git diff --check`: pass.

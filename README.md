@@ -1,4 +1,4 @@
-# j1re — Less noise. Better finds.
+# j1re — รวมพิกัดของน่าใช้
 
 เว็บ static สำหรับรวมลิงก์ Shopee Affiliate เน้นมือถือ ใช้ HTML / CSS / JavaScript โดยไม่ต้องติดตั้งแพ็กเกจหรือ build
 
@@ -6,8 +6,8 @@
 
 - ใส่สินค้าจริง 4 รายการจากลิงก์ที่เจ้าของเพจส่งมาแล้ว: ATK Phantom ULTIMATE, Logitech G PRO X3 SUPERSTRIKE, Ninjutso Sora V3 และ RAWM LEVIATHAN V4 GT
 - รูปมาจากหน้าสินค้าที่ตรวจแล้ว เก็บเป็น WebP ใน assets/ พร้อม URL แหล่งภาพใน `imageSource`; ปุ่มใช้ลิงก์ Affiliate ต้นฉบับครบถ้วน
-- Swiss-style English landing page: black/white, cobalt accent, 12-column grid, light/dark toggle and CSS-only abstract hero. No external runtime dependencies.
-- No fixed product prices or claims of personal use. The three testimonial layouts are explicitly illustrative, not customer reviews. Pricing describes free browsing and retailer-set product prices, not subscription plans.
+- Original compact Thai catalog layout: illustrated hero, searchable product grid, about and affiliate disclosure. White/black palette, cobalt buttons and updated sans-serif typography; original grid, spacing and breakpoints retained.
+- No added marketing, testimonial or pricing sections; no fixed product prices or claims of personal use. No external runtime dependencies.
 - เว็บไซต์ออนไลน์: https://j1re-finds.pages.dev/ — Cloudflare Pages Free เชื่อม GitHub branch `main` และ deploy อัตโนมัติเมื่อ push
 - ไม่มีระบบหลังบ้าน ไม่มีฐานข้อมูล ไม่มี analytics/cookies ของเว็บ
 - ไม่แก้ไขหรือเชื่อมกับเว็บไซต์ Portfolio เดิม
@@ -77,7 +77,7 @@ mkdir -p dist && cp index.html styles.css app.mjs catalog.mjs products.json dist
 - `catalog.mjs`: การค้นหาและตรวจลิงก์ Affiliate
 - `products.json`: ข้อมูลสินค้าทั้งหมด
 - `assets/*.svg`: ภาพประกอบตัวอย่างที่สร้างขึ้นสำหรับโปรเจกต์นี้
-- `assets/fonts/`: previous local Thai fonts with their original SIL Open Font License; the Swiss page uses the system sans-serif stack and does not load these files.
+- `assets/fonts/`: local Noto Sans Thai fonts with their original SIL Open Font License, used alongside Arial for the refreshed typography.
 - `tests/landing.browser.mjs`: runnable browser interaction checks; import `verifyLanding(page)` inside ego-browser.
 - `assets/og-swiss.png`: 1200 × 630 social preview artwork.
 
