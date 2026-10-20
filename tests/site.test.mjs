@@ -59,6 +59,7 @@ test('all HTML assets are relative and exist, with a labeled mobile share button
   assert.match(html, /<html lang="th"/);
   assert.deepEqual([...html.matchAll(/<section\b[^>]*class="([^"]+)"/g)].map(m => m[1]), ['hero', 'finds', 'about']);
   assert.match(html, /class="page-wrap"/);
+  assert.ok(html.includes('<span class="small-spark" aria-hidden="true"><img src="./assets/j-mark.png" width="23" height="23" alt=""></span>') && !html.includes('✳'), 'Handwritten J replaces the decorative star');
   assert.match(html, /ของน่าใช้<br>ที่อยาก/);
   assert.match(html, /src="\.\/assets\/hero\.svg"/);
   assert.doesNotMatch(html, /id="(?:features|testimonials|pricing|final-cta|theme-toggle|nav-toggle)"/);
