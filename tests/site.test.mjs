@@ -30,6 +30,17 @@ test('New palette keeps text at AAA contrast on the original layout', () => {
   assert.doesNotMatch(css, /(?:linear|radial)-gradient\(/);
 });
 
+test('Y2K decorations are local original vectors with noninteractive placement', () => {
+  const hero = readFileSync(new URL('assets/hero.svg', root), 'utf8');
+  assert.ok(hero.includes('id="y2k-orbit"') && hero.includes('id="y2k-spark"'), 'Original Y2K orbit and spark exist');
+  const speed = readFileSync(new URL('assets/y2k-speed.svg', root), 'utf8');
+  assert.match(speed, /<svg[^>]+viewBox=/);
+  assert.doesNotMatch(speed, /<script|<image|<foreignObject|(?:href|src)=/);
+  const css = readFileSync(new URL('styles.css', root), 'utf8');
+  assert.match(css, /\.about::after\{[^}]*position:absolute[^}]*pointer-events:none/);
+  assert.match(css, /@media\(max-width:1000px\)\{\.about::after\{display:none\}/);
+});
+
 const data = JSON.parse(readFileSync(new URL('products.json', root), 'utf8'));
 test('four supplied affiliate URLs are preserved in order with real catalog entries', () => {
   assert.deepEqual(data.products.map(p => p.url), [
