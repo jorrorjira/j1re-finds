@@ -1,4 +1,4 @@
-import { filterProducts, affiliateHref } from './catalog.mjs';
+import { filterProducts, productHref } from './catalog.mjs?v=gallery-1';
 
 const grid = document.querySelector('#product-grid');
 const search = document.querySelector('#search');
@@ -22,11 +22,13 @@ function node(tag, className, text) {
   return el;
 }
 function card(product) {
-  const article = node('article', 'product-card');
+  const href = productHref(product);
+  const article = node(href ? 'a' : 'article', 'product-card');
+  if (href) { article.href = href; article.setAttribute('aria-label', `ดูรูปและรายละเอียด ${product.name}`); }
   article.dataset.productId = product.id;
   const figure = node('div', 'product-image');
   const image = document.createElement('img');
-  image.src = product.image;
+  image.src = product.cover || product.image;
   image.alt = product.demo ? `ภาพประกอบตัวอย่าง ${product.name}` : product.name;
   image.width = 450; image.height = 450;
   image.loading = 'lazy'; image.decoding = 'async';
@@ -36,15 +38,7 @@ function card(product) {
   const copy = node('div', 'product-copy');
   const group = data.categories.find(item => item.id === product.category);
   copy.append(node('span', 'product-category', group?.english || 'FINDS'), node('h3', '', product.name), node('p', 'product-description', product.description));
-  const href = affiliateHref(product);
-  const link = node(href ? 'a' : 'button', 'product-link');
-  if (href) {
-    link.href = href; link.target = '_blank'; link.rel = 'sponsored noopener noreferrer';
-    link.setAttribute('aria-label', `ดู ${product.name} บน Shopee (เปิดแท็บใหม่)`);
-  } else {
-    link.type = 'button'; link.disabled = true;
-  }
-  link.append(node('span', '', href ? 'ดูพิกัด Shopee' : product.demo ? 'รอลิงก์จริง' : 'ยังไม่มีลิงก์'), node('span', '', href ? '↗' : '—'));
+  const link = node('span', 'product-link', href ? 'ดูรูปและรายละเอียด' : 'ยังไม่มีรายละเอียด');
   copy.append(link); article.append(figure, copy);
   return article;
 }

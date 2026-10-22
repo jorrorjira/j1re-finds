@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="description" content="ดูรูปเมาส์หลายมุม เลือกสีเพื่อดูภาพ แล้วไปดูราคาและตัวเลือกที่ร้านบน Shopee">
+  <title>รูปและรายละเอียดเมาส์ — j1re</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=gallery-2">
+  <script type="module" src="./product.mjs?v=gallery-1"></script>
+</head>
+<body class="product-page">
+  <a class="skip-link" href="#product-main">ข้ามไปดูสินค้า</a>
+  <div class="page-wrap">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="j1re หน้าแรก">j1re<span class="brand-dot">.</span></a>
+      <span class="header-note">ของน่าใช้ ที่อยากบอกต่อ</span>
+      <nav aria-label="เมนูหลัก"><a href="./#finds">ดูเมาส์ทั้งหมด</a></nav>
+    </header>
+    <main id="product-main">
+      <a class="back-catalog" href="./#finds"><span aria-hidden="true">←</span> กลับไปเลือกเมาส์</a>
+      <p id="detail-loading" class="load-message" role="status">กำลังโหลดรูปสินค้า...</p>
+      <section id="detail-error" class="error-state" role="alert" hidden><h1 id="error-title">โหลดสินค้าไม่สำเร็จ</h1><p id="error-copy">ตรวจการเชื่อมต่อ แล้วลองอีกครั้ง</p><button id="detail-retry" class="text-button" type="button">ลองอีกครั้ง</button></section>
+      <noscript><p class="demo-notice">กรุณาเปิด JavaScript เพื่อดูรูปและรายละเอียดสินค้า หรือกลับไปหน้ารวมสินค้า</p></noscript>
+      <div id="product-content" hidden>
+        <div class="product-detail">
+          <header class="product-intro"><h1 id="product-name"></h1><p id="product-description"></p></header>
+          <section class="gallery" aria-label="รูปสินค้า">
+            <div class="gallery-stage"><button id="open-image" class="gallery-main" type="button" aria-haspopup="dialog" aria-label="ขยายรูปสินค้า"><img id="gallery-image" alt="" width="1100" height="1100" fetchpriority="high"><span class="zoom-hint">ขยายรูป <span aria-hidden="true">↗</span></span></button><p id="image-error" role="status" hidden>โหลดภาพนี้ไม่ได้ ลองเลือกมุมอื่นด้านล่าง</p></div>
+            <div class="gallery-controls"><button id="previous-image" class="image-arrow" type="button" aria-label="รูปก่อนหน้า">←</button><p id="image-status" role="status" aria-live="polite" aria-atomic="true"></p><button id="next-image" class="image-arrow" type="button" aria-label="รูปถัดไป">→</button></div>
+            <div id="thumbnails" class="thumbnails" role="group" aria-label="เลือกมุมมอง"></div>
+          </section>
+          <section class="product-options" aria-label="สีและรายละเอียดเพิ่มเติม">
+            <fieldset class="color-fieldset"><legend>เลือกสีเพื่อดูภาพ</legend><div id="color-options" class="color-options"></div></fieldset>
+            <p class="variant-note" id="variant-note"></p>
+            <a id="affiliate-link" class="primary-button" target="_blank" rel="sponsored noopener noreferrer">ดูสินค้าบน Shopee <span aria-hidden="true">↗</span></a><p id="affiliate-unavailable" hidden>ยังไม่มีลิงก์ร้านค้าสำหรับสินค้านี้</p>
+          </section>
+        </div>
+        <section class="purchase-panel" aria-labelledby="purchase-title"><div><h2 id="purchase-title">ดูราคาและตัวเลือกที่ร้าน</h2><p>เช็กรุ่น สี สต็อก และเงื่อนไขล่าสุดบน Shopee ก่อนสั่งซื้อ</p><p class="affiliate-note">ลิงก์ Affiliate · j1re อาจได้รับค่าคอมมิชชัน โดยไม่มีค่าใช้จ่ายเพิ่มจากลิงก์นี้</p></div></section>
+        <p class="detail-disclosure">เว็บไซต์นี้ไม่ใช่เว็บไซต์ทางการของ Shopee ภาพสีต่าง ๆ ไม่ใช่การยืนยันว่าหน้าร้านมีทุกสีจำหน่าย</p>
+      </div>
+    </main>
+    <footer><a class="brand footer-brand" href="./" aria-label="j1re หน้าแรก">j1re<span class="brand-dot">.</span></a><span>ของน่าใช้ อยู่ใกล้แค่คลิก</span></footer>
+  </div>
+  <dialog id="image-dialog" class="image-dialog" aria-labelledby="zoom-caption"><form method="dialog"><button class="dialog-close" aria-label="ปิดรูปขยาย" value="close" autofocus>×</button></form><img id="zoom-image" alt=""><p id="zoom-caption"></p></dialog>
+</body>
+</html>

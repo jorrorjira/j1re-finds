@@ -37,7 +37,220 @@
         "gaming",
         "ATK"
       ],
-      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mthgxlrr7aiq12@resize_w450_nl.webp"
+      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mthgxlrr7aiq12@resize_w450_nl.webp",
+      "variants": [
+        {
+          "id": "dune",
+          "name": "Dune (Sand)",
+          "color": "#b5ad91",
+          "images": [
+            {
+              "src": "./assets/gallery/001/dune/01.webp",
+              "label": "ด้านบน",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านบน",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านหน้า",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านซ้าย",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/04.webp",
+              "label": "ด้านขวา",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านขวา",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านหลัง",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/06.webp",
+              "label": "ด้านใต้",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) ด้านใต้",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/dune/07.webp",
+              "label": "มุมเฉียงด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Dune (Sand) มุมเฉียงด้านหลัง",
+              "width": 700,
+              "height": 700
+            }
+          ]
+        },
+        {
+          "id": "eon",
+          "name": "Eon (Black)",
+          "color": "#222222",
+          "images": [
+            {
+              "src": "./assets/gallery/001/eon/01.webp",
+              "label": "ด้านบน",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) ด้านบน",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/eon/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) ด้านหน้า",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/eon/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) ด้านซ้าย",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/eon/04.webp",
+              "label": "ด้านขวา",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) ด้านขวา",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/eon/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) ด้านหลัง",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/eon/06.webp",
+              "label": "มุมเฉียงด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Eon (Black) มุมเฉียงด้านหลัง",
+              "width": 700,
+              "height": 700
+            }
+          ]
+        },
+        {
+          "id": "prime",
+          "name": "Prime (White)",
+          "color": "#f0f0ef",
+          "images": [
+            {
+              "src": "./assets/gallery/001/prime/01.webp",
+              "label": "ด้านบน",
+              "alt": "ATK Phantom ULTIMATE Prime (White) ด้านบน",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/prime/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "ATK Phantom ULTIMATE Prime (White) ด้านหน้า",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/prime/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "ATK Phantom ULTIMATE Prime (White) ด้านซ้าย",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/prime/04.webp",
+              "label": "ด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Prime (White) ด้านหลัง",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/prime/05.webp",
+              "label": "ด้านใต้",
+              "alt": "ATK Phantom ULTIMATE Prime (White) ด้านใต้",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/prime/06.webp",
+              "label": "มุมเฉียงด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Prime (White) มุมเฉียงด้านหลัง",
+              "width": 700,
+              "height": 700
+            }
+          ]
+        },
+        {
+          "id": "verge",
+          "name": "Verge (Blue)",
+          "color": "#0795c3",
+          "images": [
+            {
+              "src": "./assets/gallery/001/verge/01.webp",
+              "label": "ด้านบน",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านบน",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านหน้า",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านซ้าย",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/04.webp",
+              "label": "ด้านขวา",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านขวา",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านหลัง",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/06.webp",
+              "label": "ด้านใต้",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) ด้านใต้",
+              "width": 700,
+              "height": 700
+            },
+            {
+              "src": "./assets/gallery/001/verge/07.webp",
+              "label": "มุมเฉียงด้านหลัง",
+              "alt": "ATK Phantom ULTIMATE Verge (Blue) มุมเฉียงด้านหลัง",
+              "width": 700,
+              "height": 700
+            }
+          ]
+        }
+      ],
+      "cover": "./assets/gallery/001/dune/01.webp"
     },
     {
       "id": "002",
@@ -54,7 +267,108 @@
         "gaming",
         "Logitech"
       ],
-      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztf-mthj1xmlu32ebc_tn"
+      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztf-mthj1xmlu32ebc_tn",
+      "variants": [
+        {
+          "id": "magenta_eclipse",
+          "name": "Magenta Eclipse",
+          "color": "#E83269",
+          "images": [
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/01.webp",
+              "label": "ด้านบน",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse มุมบนตรง ตัวเมาส์สีชมพูแมเจนตาและปุ่มหลักสีดำ",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse มุมหน้าตรง เห็นล้อเลื่อนและช่อง USB-C",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse ด้านซ้าย เห็นปุ่มข้างสองปุ่มและตัวอักษร X3",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/04.webp",
+              "label": "ด้านขวา",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse ด้านขวาที่ไม่มีปุ่มข้าง พร้อมตัวอักษร SUPERSTRIKE",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse มุมหลังตรง เห็นท้ายเมาส์สีชมพูแมเจนตา โลโก้ G และฐานสีดำ",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/magenta_eclipse/06.webp",
+              "label": "เฉียงหน้าซ้าย",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Magenta Eclipse มุมเฉียงหน้าซ้ายสามส่วนสี่ เห็นปุ่มหลัก ล้อเลื่อน และปุ่มข้างสองปุ่ม",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        },
+        {
+          "id": "midnight_black",
+          "name": "Midnight Black",
+          "color": "#202020",
+          "images": [
+            {
+              "src": "./assets/gallery/002/midnight_black/01.webp",
+              "label": "ด้านบน",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black มุมบนตรง ตัวเมาส์สีดำพร้อมโลโก้ G สีอ่อน",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/midnight_black/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black มุมหน้าตรง เห็นล้อเลื่อนและช่อง USB-C",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/midnight_black/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black ด้านซ้าย เห็นปุ่มข้างสองปุ่มและตัวอักษร X3",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/midnight_black/04.webp",
+              "label": "ด้านขวา",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black ด้านขวาที่ไม่มีปุ่มข้าง พร้อมตัวอักษร SUPERSTRIKE",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/midnight_black/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black มุมหลังตรง เห็นท้ายเมาส์สีดำและโลโก้ G สีอ่อน",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/002/midnight_black/06.webp",
+              "label": "เฉียงหน้าซ้าย",
+              "alt": "Logitech G PRO X3 SUPERSTRIKE สี Midnight Black มุมเฉียงหน้าซ้ายสามส่วนสี่ เห็นปุ่มหลัก ล้อเลื่อน และปุ่มข้างสองปุ่ม",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        }
+      ],
+      "cover": "./assets/gallery/002/magenta_eclipse/01.webp"
     },
     {
       "id": "003",
@@ -71,7 +385,108 @@
         "gaming",
         "Ninjutso"
       ],
-      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztj-mr4gw2pmz6ys4e_tn"
+      "imageSource": "https://down-th.img.susercontent.com/file/th-11134207-81ztj-mr4gw2pmz6ys4e_tn",
+      "variants": [
+        {
+          "id": "white",
+          "name": "ขาว (White)",
+          "color": "#f4f4f5",
+          "images": [
+            {
+              "src": "./assets/gallery/003/white/01.webp",
+              "label": "ด้านบน",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านบน",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านหน้า",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านซ้าย",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/04.webp",
+              "label": "ด้านขวา",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านขวา",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านหลัง",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/06.webp",
+              "label": "ด้านใต้",
+              "alt": "Ninjutso Sora V3 สีขาว ด้านใต้",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/003/white/07.webp",
+              "label": "มุมเฉียงด้านหน้า",
+              "alt": "Ninjutso Sora V3 สีขาว มุมเฉียงด้านหน้า",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        },
+        {
+          "id": "black",
+          "name": "ดำ (Black)",
+          "color": "#202020",
+          "images": [
+            {
+              "src": "./assets/gallery/003/black/01.webp",
+              "label": "ด้านบน",
+              "alt": "Ninjutso Sora V3 ดำ (Black) ด้านบน",
+              "width": 800,
+              "height": 800
+            },
+            {
+              "src": "./assets/gallery/003/black/02.webp",
+              "label": "ด้านซ้าย",
+              "alt": "Ninjutso Sora V3 ดำ (Black) ด้านซ้าย",
+              "width": 800,
+              "height": 800
+            },
+            {
+              "src": "./assets/gallery/003/black/03.webp",
+              "label": "ด้านขวา",
+              "alt": "Ninjutso Sora V3 ดำ (Black) ด้านขวา",
+              "width": 800,
+              "height": 800
+            }
+          ]
+        },
+        {
+          "id": "pink",
+          "name": "ชมพู (Pink)",
+          "color": "#eda9c1",
+          "images": [
+            {
+              "src": "./assets/gallery/003/pink/01.webp",
+              "label": "ด้านบน",
+              "alt": "Ninjutso Sora V3 ชมพู (Pink) ด้านบน",
+              "width": 800,
+              "height": 800
+            }
+          ]
+        }
+      ],
+      "cover": "./assets/gallery/003/white/01.webp"
     },
     {
       "id": "004",
@@ -88,7 +503,178 @@
         "gaming",
         "RAWM"
       ],
-      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mtqau0iken0h0c@resize_w450_nl.webp"
+      "imageSource": "https://down-th.img.susercontent.com/file/cn-11134207-820l4-mtqau0iken0h0c@resize_w450_nl.webp",
+      "variants": [
+        {
+          "id": "gunmetal_black",
+          "name": "Gunmetal Black",
+          "color": "#747570",
+          "images": [
+            {
+              "src": "./assets/gallery/004/gunmetal_black/01.webp",
+              "label": "ด้านบน",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมด้านบน มีตัวรับสัญญาณอยู่ข้างเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมด้านหน้า เห็นปุ่มคลิก ล้อเลื่อน และช่องด้านหน้า พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมด้านซ้าย เห็นปุ่มด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/04.webp",
+              "label": "ด้านขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมด้านขวา เห็นทรงด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมด้านหลังตรง เห็นส่วนท้ายเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/06.webp",
+              "label": "เฉียงหน้าซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมสามส่วนสี่จากด้านหน้าซ้าย เห็นปุ่มด้านข้างและสัญลักษณ์ GT พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/gunmetal_black/07.webp",
+              "label": "เฉียงหลังขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Gunmetal Black มุมสามส่วนสี่จากด้านหลังขวา เห็นส่วนท้ายและด้านบน พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        },
+        {
+          "id": "matte_black",
+          "name": "Matte Black",
+          "color": "#202124",
+          "images": [
+            {
+              "src": "./assets/gallery/004/matte_black/01.webp",
+              "label": "ด้านบน",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมด้านบน มีตัวรับสัญญาณอยู่ข้างเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมด้านหน้า เห็นปุ่มคลิก ล้อเลื่อน และช่องด้านหน้า พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมด้านซ้าย เห็นปุ่มด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/04.webp",
+              "label": "ด้านขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมด้านขวา เห็นทรงด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมด้านหลังตรง เห็นส่วนท้ายเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/06.webp",
+              "label": "เฉียงหน้าซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมสามส่วนสี่จากด้านหน้าซ้าย เห็นปุ่มด้านข้างและสัญลักษณ์ GT พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/matte_black/07.webp",
+              "label": "เฉียงหลังขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Matte Black มุมสามส่วนสี่จากด้านหลังขวา เห็นส่วนท้ายและด้านบน พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        },
+        {
+          "id": "abyss_blue",
+          "name": "Abyss Blue",
+          "color": "#254EDB",
+          "images": [
+            {
+              "src": "./assets/gallery/004/abyss_blue/01.webp",
+              "label": "ด้านบน",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมด้านบน มีตัวรับสัญญาณอยู่ข้างเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/02.webp",
+              "label": "ด้านหน้า",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมด้านหน้า เห็นปุ่มคลิก ล้อเลื่อน และช่องด้านหน้า พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/03.webp",
+              "label": "ด้านซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมด้านซ้าย เห็นปุ่มด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/04.webp",
+              "label": "ด้านขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมด้านขวา เห็นทรงด้านข้าง พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/05.webp",
+              "label": "ด้านหลัง",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมด้านหลังตรง เห็นส่วนท้ายเมาส์ พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/06.webp",
+              "label": "เฉียงหน้าซ้าย",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมสามส่วนสี่จากด้านหน้าซ้าย เห็นปุ่มด้านข้างและสัญลักษณ์ GT พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            },
+            {
+              "src": "./assets/gallery/004/abyss_blue/07.webp",
+              "label": "เฉียงหลังขวา",
+              "alt": "RAWM LEVIATHAN V4 GT สี Abyss Blue มุมสามส่วนสี่จากด้านหลังขวา เห็นส่วนท้ายและด้านบน พื้นหลังขาว",
+              "width": 1100,
+              "height": 1100
+            }
+          ]
+        }
+      ],
+      "cover": "./assets/gallery/004/gunmetal_black/01.webp"
     }
   ]
 }

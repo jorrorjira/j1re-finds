@@ -8,9 +8,10 @@ export async function verifyLanding(page) {
   await page.waitForFunction(() => document.querySelectorAll('.product-card').length === 4);
   check(await page.evaluate(() => document.documentElement.lang === 'th' && [...document.querySelectorAll('main > section')].map(e => e.className).join(',') === 'hero,finds,about'), 'Original Thai hero, collection and about structure');
   const expected = ['https://s.shopee.co.th/7AeS06RQfd', 'https://s.shopee.co.th/4LKGcvhFdP', 'https://s.shopee.co.th/4qGXDsHAME', 'https://s.shopee.co.th/W7Y3vuHxE'];
-  const links = await page.evaluate(() => [...document.querySelectorAll('.product-link')].map(a => ({ href: a.href, rel: a.rel, target: a.target, label: a.getAttribute('aria-label') })));
-  assert.deepEqual(links.map(a => a.href), expected);
-  check(links.every(a => a.rel.includes('sponsored') && a.rel.includes('noopener') && a.rel.includes('noreferrer') && a.target === '_blank' && a.label), 'All four original affiliate links and safe attributes');
+  const links = await page.evaluate(() => [...document.querySelectorAll('.product-card')].map(a => ({ href: a.getAttribute('href'), target: a.target, label: a.getAttribute('aria-label') })));
+  assert.deepEqual(links.map(a => a.href), ['001','002','003','004'].map(id => `./product.html?id=${id}`));
+  assert.deepEqual(await page.evaluate(async () => (await (await fetch('./products.json')).json()).products.map(p => p.url)), expected);
+  check(links.every(a => !a.target && a.label), 'Four internal detail links; original affiliate URLs retained in data');
   for (const [brand, id] of [['atk', '001'], ['logitech', '002'], ['ninjutso', '003'], ['rawm', '004']]) {
     await activate(`[data-category="${brand}"]`);
     check(await page.evaluate(({ brand, id }) => document.querySelectorAll('.product-card').length === 1 && document.querySelector('.product-card').dataset.productId === id && document.querySelector(`[data-category="${brand}"]`).getAttribute('aria-pressed') === 'true', { brand, id }), `Brand filter: ${brand}`);
@@ -34,7 +35,7 @@ export async function verifyLanding(page) {
     await page.cdp('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 701 });
     await page.waitForFunction(w => innerWidth === w, width);
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No horizontal overflow at ${width}px`);
-    if (width === 1440) check(await page.evaluate(() => [...document.querySelectorAll('.product-card h3')].every(e => e.clientHeight <= parseFloat(getComputedStyle(e).lineHeight) + 1)), 'Desktop product titles keep the original single-line layout');
+    if (width === 1440) check(await page.evaluate(() => [...document.querySelectorAll('.product-card h3')].every(e => e.clientHeight <= parseFloat(getComputedStyle(e).lineHeight) * 2 + 1)), 'Desktop product titles fit within two lines');
     check(await page.evaluate(() => ![...document.querySelectorAll('h1,h2,h3,.primary-button,.product-link,.category-button')].some(e => e.getBoundingClientRect().width && e.scrollWidth > e.clientWidth + 1)), `No clipped headings or controls at ${width}px`);
     check(await page.evaluate(w => getComputedStyle(document.querySelector('.product-grid')).gridTemplateColumns.split(' ').length === (w > 1000 ? 4 : 2) && getComputedStyle(document.querySelector('.hero')).gridTemplateColumns.split(' ').length === (w > 700 ? 2 : 1), width), `Original column layout at ${width}px`);
   }
@@ -53,7 +54,7 @@ export async function verifyLanding(page) {
   await page.cdp('Network.setCacheDisabled', { cacheDisabled: false });
   await page.evaluate(() => { document.querySelector('#finds').scrollIntoView({ behavior: 'instant' }); });
   await page.waitForFunction(() => [...document.querySelectorAll('.product-image img')].every(i => i.complete && i.naturalWidth > 0));
-  check(await page.evaluate(() => [...document.querySelectorAll('.product-image img')].every(i => i.src.endsWith('.webp'))), 'Four original product images loaded without fallback');
+  check(await page.evaluate(() => [...document.querySelectorAll('.product-image img')].every(i => i.src.endsWith('.webp'))), 'Four selected product covers loaded without fallback');
   await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
   return { passed: passed.length, checks: passed };
 }

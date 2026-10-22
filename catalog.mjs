@@ -7,6 +7,10 @@ export function filterProducts(products, { query = '', category = 'all' } = {}) 
   });
 }
 
+export function productHref({ id }) {
+  return typeof id === 'string' && /^\d{3}$/.test(id) ? `./product.html?id=${id}` : null;
+}
+
 export function affiliateHref({ url, demo = false }) {
   if (demo || typeof url !== 'string' || url !== url.trim()) return null;
   try {

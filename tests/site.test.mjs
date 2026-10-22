@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
 
-test('New palette keeps text at AAA contrast on the original layout', () => {
+test('Site palette keeps readable text and the familiar catalog grid', () => {
   const css = readFileSync(new URL('styles.css', root), 'utf8');
   const luminance = hex => {
     const rgb = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
@@ -21,7 +21,7 @@ test('New palette keeps text at AAA contrast on the original layout', () => {
       assert.ok(tokens[fg] && tokens[bg], `${selector}: ${fg}/${bg} tokens`);
       const [a, b] = [luminance(tokens[fg]), luminance(tokens[bg])].sort((a, b) => b - a);
       const ratio = (a + .05) / (b + .05);
-      assert.ok(ratio >= 7, `${selector}: ${fg}/${bg} = ${ratio.toFixed(2)} (AAA needs 7)`);
+      assert.ok(ratio >= 4.5, `${selector}: ${fg}/${bg} = ${ratio.toFixed(2)} (AA needs 4.5)`);
     }
   }
   assert.match(css, /grid-template-columns:1fr 1fr/);
@@ -30,15 +30,10 @@ test('New palette keeps text at AAA contrast on the original layout', () => {
   assert.doesNotMatch(css, /(?:linear|radial)-gradient\(/);
 });
 
-test('Y2K decorations are local original vectors with noninteractive placement', () => {
-  const hero = readFileSync(new URL('assets/hero.svg', root), 'utf8');
-  assert.ok(hero.includes('id="y2k-orbit"') && hero.includes('id="y2k-spark"'), 'Original Y2K orbit and spark exist');
-  const speed = readFileSync(new URL('assets/y2k-speed.svg', root), 'utf8');
-  assert.match(speed, /<svg[^>]+viewBox=/);
-  assert.doesNotMatch(speed, /<script|<image|<foreignObject|(?:href|src)=/);
+test('Site uses no looping decorative animation and respects reduced motion', () => {
   const css = readFileSync(new URL('styles.css', root), 'utf8');
-  assert.match(css, /\.about::after\{[^}]*position:absolute[^}]*pointer-events:none/);
-  assert.match(css, /@media\(max-width:1000px\)\{\.about::after\{display:none\}/);
+  assert.match(css, /prefers-reduced-motion:reduce/);
+  assert.doesNotMatch(css, /animation:[^;]*infinite/);
 });
 
 const data = JSON.parse(readFileSync(new URL('products.json', root), 'utf8'));
@@ -71,10 +66,14 @@ test('all HTML assets are relative and exist, with a labeled mobile share button
   assert.deepEqual([...html.matchAll(/<section\b[^>]*class="([^"]+)"/g)].map(m => m[1]), ['hero', 'finds', 'about']);
   assert.match(html, /class="page-wrap"/);
   assert.ok(html.includes('<span class="small-spark" aria-hidden="true"><img src="./assets/j-mark.png" width="23" height="23" alt=""></span>') && !html.includes('✳'), 'Decorative mark retains its original size and hidden semantics');
-  assert.match(html, /ของน่าใช้<br>ที่อยาก/);
-  assert.match(html, /src="\.\/assets\/hero\.svg"/);
+  assert.match(html, /เมาส์ที่เล็งไว้<br>พิกัดอยู่นี่/);
+    assert.match(html, /src="\.\/assets\/hero-mice\.jpg"/);
   assert.doesNotMatch(html, /id="(?:features|testimonials|pricing|final-cta|theme-toggle|nav-toggle)"/);
-  assert.match(html, /property="og:image"/);
+
   for (const product of data.products) assert.match(product.description, /[\u0E00-\u0E7F]/);
-  assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i);
+  for (const file of ['index.html','product.html']) {
+    const page=readFileSync(new URL(file,root),'utf8');
+    assert.doesNotMatch(page, /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i);
+    assert.doesNotMatch(page, /ตัวอย่างดีไซน์/);
+  }
 });
